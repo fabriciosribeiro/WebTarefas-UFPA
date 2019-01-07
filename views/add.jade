@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+
+ h1 Cadastro de Tarefas
+ div.col-md-6
+   form(action="/", method="post")
+    div.form-group
+      label(for="titulo") Titulo da tarefa
+      input(type="text", class="form-control", name="titulo", id="titulo", placeholder="Titulo")
+    
+    div.form-group
+      label(for="descricao") Descrição da tarefa
+      input(type="text", class="form-control", name="descricao", id="descricao", placeholder="Descrição")
+
+    div.form-group
+      label(for="dia") Data
+      input(type="date", class="form-control", name="dia", id="dia")
+
+    div.form-group
+      label(for="horario") Horário
+      input(type="time", class="form-control", name="horario", id="horario")
+    
+    button(type="submit", class="btn btn-primary") Cadastrar Tarefa
+    a(href="#", class="btn btn-default") Voltar
+  
+

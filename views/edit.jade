@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+
+ h1 Alteração de Tarefa
+ div.col-md-6
+   form(action="/edit/"+tarefa.id, method="post")
+    input(type="hidden",name="_method",value="PUT")
+    div.form-group
+      label(for="nome") Titulo da tarefa
+      input(type="text", class="form-control", name="titulo", id="titulo", placeholder="Titulo", value="#{tarefa.titulo}")
+    
+    div.form-group
+      label(for="dia") Data
+      input(type="date", class="form-control", name="dia", id="dia",  value="#{tarefa.dia}") 
+
+    div.form-group
+      label(for="horario") Horário
+      input(type="time", class="form-control", name="horario", id="horario",  value="#{tarefa.horario}") 
+
+    div.form-group
+      label(for="descricao") Descrição da tarefa
+      input(type="text", class="form-control", name="descricao", id="descricao", placeholder="Descrição", value="#{tarefa.descricao}") 
+    
+    button(type="submit", class="btn btn-primary") Alterar Tarefa
+    a(href="/", class="btn btn-default") Voltar
+  
+

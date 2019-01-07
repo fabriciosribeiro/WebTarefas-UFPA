@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+  h1 Tarefas Agendadas
+
+  table(class="table table-striped")
+    thead
+      tr
+        th Id
+        th Titulo
+        th Data
+        th Horário
+        th Descricão
+        th Ações
+    tbody
+      each tarefa in tarefas
+        tr
+          td #{tarefa.id}
+          td #{tarefa.titulo}
+          td #{tarefa.dia}
+          td #{tarefa.horario}
+          td #{tarefa.descricao}
+          td
+            a(href="/edit/"+tarefa.id,class="btn btn-primary", style="margin:3px; width: 65px") Editar
+            button(class="btn btn-danger",onclick="event.preventDefault();document.getElementById('logout-form-"+tarefa.id+"').submit();", style="margin:3px; width: 65px") Excluir
+          
+          form(id="logout-form-"+tarefa.id, action="/delete/"+tarefa.id,method="POST" style="display: none;")
+            input(type="hidden", name="_method", value="DELETE")
+          
+        
