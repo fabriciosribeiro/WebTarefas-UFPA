@@ -10,7 +10,8 @@ var methodOverride = require('method-override');
 require('./models/tarefas');
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/tarefas');
+//mongoose.connect('mongodb://localhost/tarefas');
+mongoose.connect('mongodb://heroku_cqh3w6hl:javaabase10!@ds229458.mlab.com:29458/heroku_cqh3w6hl/tarefas');
 
 var app = express();
 
